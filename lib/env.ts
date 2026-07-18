@@ -1,9 +1,9 @@
 export function databaseEnabled() {
-  return process.env.DATABASE_ENABLED === "true" && hasSupabaseConfig();
+  return process.env.DATABASE_ENABLED !== "false" && hasSupabaseConfig();
 }
 
 export function aiEnabled() {
-  return process.env.AI_ENABLED === "true" && Boolean(process.env.DEEPSEEK_API_KEY);
+  return Boolean(resolveLlmConfig().apiKey);
 }
 
 export function hasSupabaseConfig() {
@@ -30,10 +30,23 @@ export function requireSupabaseServerKey() {
   return value;
 }
 
-export function deepseekConfig() {
+export function resolveLlmConfig() {
   return {
-    apiKey: process.env.DEEPSEEK_API_KEY,
-    baseURL: process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com",
-    model: process.env.DEEPSEEK_MODEL || "deepseek-v4-flash"
+    apiKey:
+      process.env.DEEPSEEK_API_KEY ||
+      process.env.LLM_API_KEY,
+    baseURL:
+      process.env.DEEPSEEK_BASE_URL ||
+      process.env.LLM_BASE_URL ||
+      "https://api.deepseek.com",
+    model:
+      process.env.DEEPSEEK_MODEL ||
+      process.env.LLM_MODEL ||
+      "deepseek-v4-flash"
   };
+}
+
+/** @deprecated 请优先使用 resolveLlmConfig。 */
+export function deepseekConfig() {
+  return resolveLlmConfig();
 }
