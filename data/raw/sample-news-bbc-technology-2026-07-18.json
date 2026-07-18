@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "news-batch-2026-07-18-technology-003",
+  "provider": {
+    "name": "your-name",
+    "sourceType": "rss",
+    "sourceName": "BBC",
+    "sourceHomepage": "https://www.bbc.com/news"
+  },
+  "crawl": {
+    "keyword": "人工智能",
+    "category": "科技数码",
+    "timeRange": "24h",
+    "crawledAt": "2026-07-18T10:30:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "totalFetched": 3,
+    "notes": "示例输出：由 bbc_crawler.py 生成，展示符合模板的 BBC 科技新闻数据结构。真实抓取时请替换为你的成员名并删除本说明。"
+  },
+  "articles": [
+    {
+      "id": "bbc-20260718-001-a3f9b2",
+      "title": "AI models show 'surprising' reasoning abilities in new study",
+      "description": "Researchers say latest artificial intelligence systems demonstrate unexpected problem-solving skills in mathematics and coding tasks.",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/technology/articles/example-ai-reasoning",
+      "publishedAt": "2026-07-18T06:15:00+08:00",
+      "category": "科技数码",
+      "imageUrl": "https://ichef.bbci.co.uk/news/800/ai-reasoning.jpg",
+      "keywords": [
+        "人工智能",
+        "科技数码",
+        "AI"
+      ],
+      "raw": {
+        "originalTitle": "AI models show 'surprising' reasoning abilities in new study",
+        "author": "",
+        "language": "en-GB",
+        "pubDateRaw": "Fri, 18 Jul 2026 06:15:00 GMT"
+      }
+    },
+    {
+      "id": "bbc-20260718-002-8c1d4e",
+      "title": "Tech giants pledge safety rules for next-generation AI tools",
+      "description": "Major technology companies have agreed to new voluntary safeguards as governments push for stronger regulation of generative AI.",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/technology/articles/example-ai-safety",
+      "publishedAt": "2026-07-18T04:40:00+08:00",
+      "category": "科技数码",
+      "imageUrl": "https://ichef.bbci.co.uk/news/800/ai-safety.jpg",
+      "keywords": [
+        "人工智能",
+        "科技数码"
+      ],
+      "raw": {
+        "originalTitle": "Tech giants pledge safety rules for next-generation AI tools",
+        "author": "",
+        "language": "en-GB",
+        "pubDateRaw": "Fri, 18 Jul 2026 04:40:00 GMT"
+      }
+    },
+    {
+      "id": "bbc-20260718-003-7e2a5c",
+      "title": "New chip design could cut AI energy use, researchers say",
+      "description": "Engineers unveil a processor architecture that reduces power consumption for large language model inference by up to 40 percent.",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/technology/articles/example-ai-chip",
+      "publishedAt": "2026-07-18T02:20:00+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "人工智能",
+        "科技数码",
+        "AI",
+        "technology"
+      ],
+      "raw": {
+        "originalTitle": "New chip design could cut AI energy use, researchers say",
+        "author": "",
+        "language": "en-GB",
+        "pubDateRaw": "Fri, 18 Jul 2026 02:20:00 GMT"
+      }
+    }
+  ]
+}
