@@ -70,12 +70,14 @@ export async function rankNews(input: RankNewsInput): Promise<RankedSearchResult
   const ranked: RankedNewsArticle[] = inRange.map((article) => ({
     article,
     score: scoreArticle(query, article, input.now),
-    angle: classifyAngle({
-      title: article.title,
-      description: article.description,
-      keywords: article.keywords,
-      category: article.category,
-    }),
+    angle:
+      article.angle ??
+      classifyAngle({
+        title: article.title,
+        description: article.description,
+        keywords: article.keywords,
+        category: article.category,
+      }),
   }));
 
   const deduped = deduplicateArticles(ranked).sort(

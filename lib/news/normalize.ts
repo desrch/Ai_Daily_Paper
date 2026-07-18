@@ -1,10 +1,21 @@
-import type { NewsArticle } from "@/types";
+import type { NewsAngle, NewsArticle } from "@/types";
 import { createArticleId } from "@/lib/security/stable-id";
 import {
   sanitizeHttpUrl,
   sanitizeImageUrl,
 } from "@/lib/security/url";
 import { INPUT_LIMITS, truncateText } from "@/lib/security/limits";
+
+const VALID_ANGLES: NewsAngle[] = ["政策", "技术", "产业", "应用", "市场"];
+
+function normalizeAngle(value: unknown): NewsAngle | undefined {
+  if (typeof value !== "string") return undefined;
+  const normalized = value.trim();
+  if (VALID_ANGLES.includes(normalized as NewsAngle)) {
+    return normalized as NewsAngle;
+  }
+  return undefined;
+}
 
 /**
  * 新闻规范化。外部数据进入领域层前必须规范化与校验。
@@ -24,6 +35,7 @@ export interface RawArticle {
   imageUrl?: string;
   keywords?: string[];
   relevanceScore?: number;
+  angle?: NewsAngle;
 }
 
 const HTML_TAG_PATTERN = /<[^>]*>/g;
@@ -151,6 +163,7 @@ export function normalizeArticle(raw: RawArticle): NewsArticle | null {
       : undefined;
 
   const keywords = normalizeKeywords(raw.keywords);
+  const explicitAngle = normalizeAngle(raw.angle);
 
   const id = createArticleId({
     sourceId: raw.id,
@@ -176,6 +189,7 @@ export function normalizeArticle(raw: RawArticle): NewsArticle | null {
       raw.relevanceScore <= 100
         ? raw.relevanceScore
         : undefined,
+    angle: explicitAngle,
   };
 }
 

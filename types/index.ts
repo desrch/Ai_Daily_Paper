@@ -18,6 +18,8 @@ export interface NewsArticle {
   imageUrl?: string;
   keywords: string[];
   relevanceScore?: number;
+  /** 外部数据源可能携带的确定性角度，优先使用。 */
+  angle?: NewsAngle;
 }
 
 export interface SearchNewsItem extends NewsArticle {

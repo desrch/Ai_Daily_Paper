@@ -105,12 +105,14 @@ describe("diversifySelection", () => {
       ranked("a", "政策", 90),
       ranked("b", "政策", 88),
       ranked("c", "技术", 70),
+      ranked("d", "应用", 65),
     ];
-    const result = diversifySelection(input, { targetCount: 2 });
-    // a 与 c（不同角度）应优先于第二个政策 b。
+    const result = diversifySelection(input, { targetCount: 3 });
+    // a 与 c、d（不同角度）应优先于第二个政策 b。
     const ids = result.map((r) => r.article.id);
     expect(ids).toContain("a");
     expect(ids).toContain("c");
+    expect(ids).toContain("d");
     expect(ids).not.toContain("b");
   });
 });

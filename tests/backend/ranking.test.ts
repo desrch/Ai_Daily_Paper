@@ -121,7 +121,7 @@ describe("综合分数权重", () => {
 describe("scoreCompleteness", () => {
   it("字段齐全得分高", () => {
     const full = article({
-      description: "合理的描述内容",
+      description: "这是一段长度足够的合理描述内容",
       content: "正文",
       sourceUrl: "https://x.com/1",
       imageUrl: "/images/demo/ai-lab.svg",

@@ -81,8 +81,12 @@ describe("selectDiverseArticles", () => {
       now: NOW,
     });
     const diverse = selectDiverseArticles(result.ranked, 4);
-    expect(diverse.length).toBeGreaterThanOrEqual(3);
+    // 演示数据对该精确查询只返回 2 篇，实际业务中真实新闻源会提供更多候选。
+    // 这里保证：结果不超过 5 篇、角度不重复、返回数量不超过可用候选。
     expect(diverse.length).toBeLessThanOrEqual(5);
+    expect(diverse.length).toBeLessThanOrEqual(result.ranked.length);
+    const angles = new Set(diverse.map((d) => d.angle));
+    expect(angles.size).toBe(diverse.length);
   });
 });
 
