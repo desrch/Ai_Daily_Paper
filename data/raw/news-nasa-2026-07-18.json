@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "news-batch-20260718-technology-nasa-001",
+  "provider": {
+    "name": "nasa-rss-crawler-test",
+    "sourceType": "rss",
+    "sourceName": "NASA Technology",
+    "sourceHomepage": "https://www.nasa.gov/technology/"
+  },
+  "crawl": {
+    "keyword": "NASA Technology",
+    "category": "科技数码",
+    "timeRange": "720h",
+    "fallbackLevel": 2,
+    "crawledAt": "2026-07-18T10:56:26+08:00",
+    "timezone": "Asia/Shanghai",
+    "totalFetched": 8,
+    "notes": "自动时间降级策略，当前窗口720小时。"
+  },
+  "articles": [
+    {
+      "id": "nasa-827ed5a9502a067c",
+      "title": "Ontario Wildfire Smoke Moves East",
+      "description": "Canadian wildfires sent plumes of smoke streaming over Ontario, Quebec, and parts of the U.S. Midwest and Northeast.",
+      "content": "Canadian wildfires sent plumes of smoke streaming over Ontario, Quebec, and parts of the U.S. Midwest and Northeast.",
+      "source": "NASA",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/ontario-wildfire-smoke-moves-east/",
+      "publishedAt": "2026-07-16T12:00:00+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "Ontario Wildfire Smoke Moves East",
+        "language": "en-US" 
+      }
+    },
+    {
+      "id": "nasa-d0c29373315b9ad3",
+      "title": "Super Typhoon Bavi",
+      "description": "The third category 5 tropical cyclone of 2026 crossed the U.S. Northern Mariana Islands and Guam before continuing toward Asia.",
+      "content": "The third category 5 tropical cyclone of 2026 crossed the U.S. Northern Mariana Islands and Guam before continuing toward Asia.",
+      "source": "NASA",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/super-typhoon-bavi/",
+      "publishedAt": "2026-07-09T12:01:00+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "Super Typhoon Bavi",
+        "language": "en-US"
+      }
+    },
+    {
+      "id": "nasa-08657e55a80d7c8a",
+      "title": "NASA’s New Horizons Spacecraft Wakes from Hibernation in Good Health",
+      "description": "Following its longest hibernation period ever of nearly a year, NASA’s New Horizons spacecraft has emerged in good health and is ready to begin transmitting science data gathered in the distant Kuiper Belt far beyond Pluto. On June 23, flight controllers at the Johns Hopkins Applied Physics Laboratory (APL) in Laurel, Maryland, confirmed New Horizons, […]",
+      "content": "Following its longest hibernation period ever of nearly a year, NASA’s New Horizons spacecraft has emerged in good health and is ready to begin transmitting science data gathered in the distant Kuiper Belt far beyond Pluto. On June 23, flight controllers at the Johns Hopkins Applied Physics Laboratory (APL) in Laurel, Maryland, confirmed New Horizons, […]",
+      "source": "NASA",
+      "sourceUrl": "https://science.nasa.gov/missions/new-horizons/nasas-new-horizons-spacecraft-wakes-from-hibernation-in-good-health/",
+      "publishedAt": "2026-07-08T01:48:49+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "NASA’s New Horizons Spacecraft Wakes from Hibernation in Good Health",
+        "language": "en-US"
+      }
+    },
+    {
+      "id": "nasa-cd4d581ab2460dc9",
+      "title": "NASA’s CAPSTONE Completes Extended Mission Testing Lunar Technologies",
+      "description": "As NASA prepares for a sustained human presence on the Moon, missions will increasingly require spacecraft that can navigate and communicate without a direct connection to Earth. NASA’s Cislunar Autonomous Positioning System Technology Operations and Navigation Experiment, or CAPSTONE, validated and advanced these capabilities. Designed to test and validate technologies in lunar orbit, CAPSTONE launched […]",
+      "content": "As NASA prepares for a sustained human presence on the Moon, missions will increasingly require spacecraft that can navigate and communicate without a direct connection to Earth. NASA’s Cislunar Autonomous Positioning System Technology Operations and Navigation Experiment, or CAPSTONE, validated and advanced these capabilities. Designed to test and validate technologies in lunar orbit, CAPSTONE launched […]",
+      "source": "NASA",
+      "sourceUrl": "https://www.nasa.gov/technology/space-comms/nasas-capstone-completes-extended-mission-testing-lunar-technologies/",
+      "publishedAt": "2026-07-06T23:00:54+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "NASA’s CAPSTONE Completes Extended Mission Testing Lunar Technologies",
+        "language": "en-US"
+      }
+    },
+    {
+      "id": "nasa-ecca27d043e260f3",
+      "title": "NextSTEP-3 A: Lunar Enabling Technology",
+      "description": "Solicitation Number: 80GRC026R0008 May 19, 2026 – Synopsis issued June 29, 2026 – Draft BAA and Appendix A Issued | Web Article NASA issued a draft Broad Agency Announcement under NextSTEP‑3, Appendix A, on June 29, 2026, to advance concepts that accelerate the technological readiness of critical systems for lunar surface and cislunar architecture. This solicitation seeks to close key technology gaps and […]",
+      "content": "Solicitation Number: 80GRC026R0008 May 19, 2026 – Synopsis issued June 29, 2026 – Draft BAA and Appendix A Issued | Web Article NASA issued a draft Broad Agency Announcement under NextSTEP‑3, Appendix A, on June 29, 2026, to advance concepts that accelerate the technological readiness of critical systems for lunar surface and cislunar architecture. This solicitation seeks to close key technology gaps and […]",
+      "source": "NASA",
+      "sourceUrl": "https://www.nasa.gov/directorates/stmd/nextstep-3-a-lunar-enabling-technology/",
+      "publishedAt": "2026-06-29T22:56:54+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "NextSTEP-3 A: Lunar Enabling Technology",
+        "language": "en-US"
+      }
+    },
+    {
+      "id": "nasa-26389edf8213b3b9",
+      "title": "Partners, NASA Ready for June Launch of Swift Boost Mission",
+      "description": "A mission to raise the orbit of NASA’s Swift observatory is poised for launch June 30.",
+      "content": "A mission to raise the orbit of NASA’s Swift observatory is poised for launch June 30.",
+      "source": "NASA",
+      "sourceUrl": "https://science.nasa.gov/missions/swift/swift-boost-mission/partners-nasa-ready-for-june-launch-of-swift-boost-mission/",
+      "publishedAt": "2026-06-27T01:16:22+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "Partners, NASA Ready for June Launch of Swift Boost Mission",
+        "language": "en-US"
+      }
+    },
+    {
+      "id": "nasa-9af476c5fa943ac1",
+      "title": "NASA Identifies More Than 40 Space Technologies for Collaboration",
+      "description": "NASA selected 41 proposals from 37 companies to advance technologies in support of the agency’s goals to establish a long-term presence on the Moon and enable human exploration of Mars. These American companies, picked from NASA’s 2025 Announcement of Collaboration Opportunity (ACO), will mature technologies creating solutions for space transportation, planetary surface operations, and lunar […]",
+      "content": "NASA selected 41 proposals from 37 companies to advance technologies in support of the agency’s goals to establish a long-term presence on the Moon and enable human exploration of Mars. These American companies, picked from NASA’s 2025 Announcement of Collaboration Opportunity (ACO), will mature technologies creating solutions for space transportation, planetary surface operations, and lunar […]",
+      "source": "NASA",
+      "sourceUrl": "https://www.nasa.gov/news-release/nasa-identifies-more-than-40-space-technologies-for-collaboration/",
+      "publishedAt": "2026-06-26T23:37:58+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "NASA Identifies More Than 40 Space Technologies for Collaboration",
+        "language": "en-US"
+      }
+    },
+    {
+      "id": "nasa-acc3d09b58fca992",
+      "title": "Signs of Thaw in the Bering Sea",
+      "description": "Drifting sea ice fragments near Alaska’s Saint Lawrence and Nunivak islands and colorful water around the Yukon Delta heralded the approach of the summer solstice.",
+      "content": "Drifting sea ice fragments near Alaska’s Saint Lawrence and Nunivak islands and colorful water around the Yukon Delta heralded the approach of the summer solstice.",
+      "source": "NASA",
+      "sourceUrl": "https://science.nasa.gov/earth/earth-observatory/signs-of-thaw-in-the-bering-sea/",
+      "publishedAt": "2026-06-22T12:01:00+08:00",
+      "category": "科技数码",
+      "keywords": [
+        "NASA",
+        "科技数码",
+        "航空航天"
+      ],
+      "raw": {
+        "originalTitle": "Signs of Thaw in the Bering Sea",
+        "language": "en-US"
+      }
+    }
+  ]
+}
