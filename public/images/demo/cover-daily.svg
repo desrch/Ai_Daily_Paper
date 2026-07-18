@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960">
+  <rect width="720" height="960" fill="#fffdf8"/>
+  <rect x="28" y="28" width="664" height="904" fill="none" stroke="#aaa193" stroke-width="2"/>
+  <text x="360" y="150" text-anchor="middle" fill="#b91c1c" font-family="STSong,serif" font-size="76" font-weight="700" letter-spacing="16">今日报纸</text>
+  <text x="360" y="190" text-anchor="middle" fill="#171717" font-family="Georgia,serif" font-size="18" letter-spacing="10">TODAYPAPER</text>
+  <path d="M72 224h576M72 240h576" stroke="#171717" stroke-width="3"/>
+  <rect x="72" y="290" width="360" height="240" fill="#132941"/>
+  <circle cx="252" cy="410" r="78" fill="#b91c1c"/>
+  <path d="M476 292h172M476 330h172M476 368h144M476 430h172M476 468h130" stroke="#d9d2c5" stroke-width="16"/>
+  <text x="72" y="600" fill="#171717" font-family="STSong,serif" font-size="38" font-weight="700">把世界，排成一份日报</text>
+  <path d="M72 650h576M72 690h576M72 730h576M72 770h480M72 835h270M378 835h270" stroke="#d9d2c5" stroke-width="12"/>
+</svg>

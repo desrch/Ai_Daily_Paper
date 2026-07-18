@@ -1,0 +1,48 @@
+{
+  "name": "todaypaper",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "typecheck:frontend": "tsc --noEmit -p tsconfig.frontend.json",
+    "test": "vitest run",
+    "test:frontend": "vitest run tests/subscription-validation.test.ts tests/generation-workflow.test.ts tests/poster-workflows.test.ts tests/http-client-contract.test.ts",
+    "test:watch": "vitest",
+    "validate:data": "tsx scripts/validate-demo-data.ts",
+    "validate:api": "tsx scripts/smoke-api-adapter.ts",
+    "validate:demo": "tsx scripts/validate-demo-routes.ts",
+    "check:frontend": "npm run lint && npm run typecheck:frontend && npm run test:frontend && npm run validate:data && npm run validate:api && npm run validate:demo && npm run build"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-alert-dialog": "^1.1.19",
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "html-to-image": "^1.11.13",
+    "lucide-react": "^0.468.0",
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.71.1",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4.2.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^2.1.9"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#f0ebe1"/>
+  <path d="M130 420h700M190 420V235l290-150 290 150v185" fill="none" stroke="#171717" stroke-width="16"/>
+  <path d="M255 420V265h450v155M340 420V298M480 420V298M620 420V298" fill="none" stroke="#b91c1c" stroke-width="14"/>
+  <circle cx="480" cy="182" r="24" fill="#b91c1c"/>
+  <text x="130" y="490" fill="#666158" font-family="Georgia,serif" font-size="26" letter-spacing="5">EDUCATION · DEMO ARCHIVE</text>
+</svg>

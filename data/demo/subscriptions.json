@@ -1,0 +1,39 @@
+{
+  "subscriptions": [
+    {
+      "id": "demo-sub-ai",
+      "userId": "demo-user",
+      "topic": "人工智能",
+      "keywords": ["大模型", "多模态", "AI 应用"],
+      "enabled": true,
+      "todayUpdateCount": 24,
+      "createdAt": "2026-07-01T00:00:00.000Z",
+      "updatedAt": "2026-07-18T00:00:00.000Z"
+    },
+    {
+      "id": "demo-sub-tech",
+      "userId": "demo-user",
+      "topic": "科技数码",
+      "keywords": ["芯片", "产品", "开发者工具"],
+      "enabled": true,
+      "todayUpdateCount": 18,
+      "createdAt": "2026-07-01T00:00:00.000Z",
+      "updatedAt": "2026-07-18T00:00:00.000Z"
+    },
+    {
+      "id": "demo-sub-business",
+      "userId": "demo-user",
+      "topic": "商业财经",
+      "keywords": ["产业", "市场", "公司动态"],
+      "enabled": true,
+      "todayUpdateCount": 20,
+      "createdAt": "2026-07-01T00:00:00.000Z",
+      "updatedAt": "2026-07-18T00:00:00.000Z"
+    }
+  ],
+  "deliverySettings": {
+    "email": "reader@example.com",
+    "dailyDelivery": true,
+    "deliveryTime": "08:00"
+  }
+}
