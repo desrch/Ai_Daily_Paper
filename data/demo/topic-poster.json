@@ -1,0 +1,57 @@
+{
+  "id": "demo-topic",
+  "keyword": "人工智能教育",
+  "topicTitle": "人工智能教育 · 专题海报",
+  "introduction": "本专题使用固定演示数据，从政策、技术、产业和应用四个角度说明 TodayPaper 的候选筛选与专题排版能力。",
+  "articles": [
+    {
+      "id": "demo-news-policy-01",
+      "headline": "演示｜智能教育质量框架进入公开讨论阶段",
+      "summary": "示例研究团队围绕质量、透明度与责任边界提出讨论框架。",
+      "angle": "政策",
+      "source": "TodayPaper 演示资料库",
+      "publishedAt": "2026-07-18T01:30:00.000Z",
+      "imageUrl": "/images/demo/education.svg",
+      "relevanceScore": 96
+    },
+    {
+      "id": "demo-news-tech-01",
+      "headline": "演示｜多模态学习助手原型展示新的课堂协作方式",
+      "summary": "原型样例强调教师可控、过程可解释与学习材料的结构化整理。",
+      "angle": "技术",
+      "source": "TodayPaper 演示资料库",
+      "publishedAt": "2026-07-17T06:22:00.000Z",
+      "imageUrl": "/images/demo/ai-lab.svg",
+      "relevanceScore": 93
+    },
+    {
+      "id": "demo-news-industry-01",
+      "headline": "演示｜教育科技团队把重心转向可验证的实际成效",
+      "summary": "行业样例更关注可评估结果、数据治理和长期服务能力。",
+      "angle": "产业",
+      "source": "TodayPaper 演示资料库",
+      "publishedAt": "2026-07-16T03:05:00.000Z",
+      "imageUrl": "/images/demo/market.svg",
+      "relevanceScore": 91
+    },
+    {
+      "id": "demo-news-application-01",
+      "headline": "演示｜校园试点用 AI 辅助整理课后反馈",
+      "summary": "试点样例重点关注教师复核、学生隐私和反馈时效。",
+      "angle": "应用",
+      "source": "TodayPaper 演示资料库",
+      "publishedAt": "2026-07-15T08:40:00.000Z",
+      "imageUrl": "/images/demo/campus.svg",
+      "relevanceScore": 89
+    }
+  ],
+  "trendSummary": "演示趋势观察：智能教育的关注点正从工具能力延伸到治理、评估与场景适配。",
+  "keyTakeaways": [
+    "质量框架需要同时覆盖效果、透明度和责任边界。",
+    "课堂工具应保留教师复核与过程可解释能力。",
+    "行业评价应关注长期结果，而非短期功能数量。"
+  ],
+  "keywords": ["人工智能教育", "质量框架", "多模态", "成效评估", "教师复核"],
+  "template": "classic",
+  "createdAt": "2026-07-18T03:00:00.000Z"
+}

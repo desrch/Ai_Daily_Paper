@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false
+  },
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/api/**/*.ts",
+    "lib/mock/**/*.ts",
+    "lib/validation/**/*.ts",
+    "lib/workflow/**/*.ts",
+    "lib/utils.ts",
+    "types/**/*.ts",
+    "tests/subscription-validation.test.ts",
+    "tests/generation-workflow.test.ts",
+    "tests/poster-workflows.test.ts",
+    "tests/http-client-contract.test.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "app/api/**",
+    "lib/ai/**",
+    "lib/db/**",
+    "lib/news/**",
+    "lib/security/**"
+  ]
+}

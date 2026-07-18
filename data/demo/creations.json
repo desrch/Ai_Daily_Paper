@@ -1,0 +1,102 @@
+[
+  {
+    "id": "creation-daily-0718",
+    "type": "daily_issue",
+    "title": "7 月 18 日个人日报",
+    "description": "AI、科技与商业三栏演示日报",
+    "coverImageUrl": "/images/demo/cover-daily.svg",
+    "createdAt": "2026-07-18T00:00:00.000Z",
+    "href": "/newspaper/demo-daily",
+    "saved": true
+  },
+  {
+    "id": "creation-theme-ai",
+    "type": "theme_poster",
+    "title": "人工智能主题海报",
+    "description": "四篇演示新闻的主题聚合",
+    "coverImageUrl": "/images/demo/cover-theme.svg",
+    "createdAt": "2026-07-17T10:22:00.000Z",
+    "href": "/theme-poster/demo-theme",
+    "saved": true
+  },
+  {
+    "id": "creation-topic-education",
+    "type": "topic_poster",
+    "title": "人工智能教育专题",
+    "description": "政策、技术、产业与应用四角度专题",
+    "coverImageUrl": "/images/demo/cover-topic.svg",
+    "createdAt": "2026-07-16T09:15:00.000Z",
+    "href": "/topic-poster/demo-topic",
+    "saved": true
+  },
+  {
+    "id": "creation-theme-tech",
+    "type": "theme_poster",
+    "title": "科技数码周报",
+    "description": "科技产品与开发者工具演示合集",
+    "coverImageUrl": "/images/demo/cover-theme.svg",
+    "createdAt": "2026-07-15T08:05:00.000Z",
+    "href": "/theme-poster/demo-theme",
+    "saved": true
+  },
+  {
+    "id": "creation-daily-0714",
+    "type": "daily_issue",
+    "title": "7 月 14 日个人日报",
+    "description": "固定演示历史日报",
+    "coverImageUrl": "/images/demo/cover-daily.svg",
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "href": "/newspaper/demo-daily",
+    "saved": true
+  },
+  {
+    "id": "creation-topic-energy",
+    "type": "topic_poster",
+    "title": "全球新能源观察",
+    "description": "政策、产业与市场多角度演示专题",
+    "coverImageUrl": "/images/demo/cover-topic.svg",
+    "createdAt": "2026-07-13T09:30:00.000Z",
+    "href": "/topic-poster/demo-topic",
+    "saved": true
+  },
+  {
+    "id": "creation-theme-business",
+    "type": "theme_poster",
+    "title": "商业财经周报",
+    "description": "行业信号与市场观察演示海报",
+    "coverImageUrl": "/images/demo/cover-theme.svg",
+    "createdAt": "2026-07-12T08:02:00.000Z",
+    "href": "/theme-poster/demo-theme",
+    "saved": true
+  },
+  {
+    "id": "creation-daily-0711",
+    "type": "daily_issue",
+    "title": "7 月 11 日个人日报",
+    "description": "固定演示历史日报",
+    "coverImageUrl": "/images/demo/cover-daily.svg",
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "href": "/newspaper/demo-daily",
+    "saved": true
+  },
+  {
+    "id": "creation-topic-campus",
+    "type": "topic_poster",
+    "title": "校园数字化专题",
+    "description": "校园应用与治理演示专题",
+    "coverImageUrl": "/images/demo/cover-topic.svg",
+    "createdAt": "2026-07-10T07:42:00.000Z",
+    "href": "/topic-poster/demo-topic",
+    "saved": true
+  },
+  {
+    "id": "creation-theme-campus",
+    "type": "theme_poster",
+    "title": "校园生活主题海报",
+    "description": "校园活动与学习方式演示合集",
+    "coverImageUrl": "/images/demo/cover-theme.svg",
+    "createdAt": "2026-07-09T05:20:00.000Z",
+    "href": "/theme-poster/demo-theme",
+    "saved": true
+  }
+]

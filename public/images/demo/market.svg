@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#183b34"/>
+  <g fill="#f7f3ea">
+    <rect x="125" y="320" width="90" height="120"/>
+    <rect x="270" y="260" width="90" height="180"/>
+    <rect x="415" y="190" width="90" height="250"/>
+    <rect x="560" y="230" width="90" height="210"/>
+    <rect x="705" y="120" width="90" height="320"/>
+  </g>
+  <path d="m125 275 190-84 145 28 144-101 191-44" fill="none" stroke="#b91c1c" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="125" y="500" fill="#f7f3ea" font-family="Georgia,serif" font-size="27" letter-spacing="6">MARKET NOTE · SAMPLE</text>
+</svg>

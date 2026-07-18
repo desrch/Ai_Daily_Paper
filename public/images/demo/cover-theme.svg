@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960">
+  <rect width="720" height="960" fill="#171717"/>
+  <rect x="30" y="30" width="660" height="900" fill="none" stroke="#f7f3ea" stroke-opacity=".65" stroke-width="2"/>
+  <text x="360" y="150" text-anchor="middle" fill="#f7f3ea" font-family="STSong,serif" font-size="76" font-weight="700" letter-spacing="12">人工智能</text>
+  <text x="360" y="192" text-anchor="middle" fill="#b91c1c" font-family="Georgia,serif" font-size="18" letter-spacing="9">THEME EDITION</text>
+  <circle cx="360" cy="418" r="160" fill="none" stroke="#b91c1c" stroke-width="4"/>
+  <circle cx="360" cy="418" r="94" fill="#b91c1c"/>
+  <path d="M300 435h38l24-84 34 136 26-81h43" fill="none" stroke="#fffdf8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M90 680h540M90 730h540M90 780h430" stroke="#f7f3ea" stroke-opacity=".48" stroke-width="13"/>
+  <text x="90" y="870" fill="#f7f3ea" font-family="Georgia,serif" font-size="22" letter-spacing="6">TODAYPAPER · DEMO</text>
+</svg>

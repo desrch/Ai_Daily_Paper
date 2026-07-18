@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960">
+  <rect width="720" height="960" fill="#f1eadb"/>
+  <rect x="32" y="32" width="656" height="896" fill="none" stroke="#183b34" stroke-width="3"/>
+  <text x="74" y="130" fill="#b91c1c" font-family="STSong,serif" font-size="60" font-weight="700">专题聚焦</text>
+  <text x="74" y="182" fill="#171717" font-family="STSong,serif" font-size="38">人工智能教育</text>
+  <path d="M74 218h572" stroke="#171717" stroke-width="5"/>
+  <g font-family="Georgia,serif" font-size="62" fill="#b91c1c">
+    <text x="78" y="350">1</text>
+    <text x="78" y="490">2</text>
+    <text x="78" y="630">3</text>
+    <text x="78" y="770">4</text>
+  </g>
+  <g stroke="#aaa193" stroke-width="13">
+    <path d="M150 315h470M150 355h390"/>
+    <path d="M150 455h470M150 495h350"/>
+    <path d="M150 595h470M150 635h410"/>
+    <path d="M150 735h470M150 775h380"/>
+  </g>
+  <text x="74" y="875" fill="#183b34" font-family="Georgia,serif" font-size="20" letter-spacing="7">FOUR ANGLES · ONE EDITION</text>
+</svg>
