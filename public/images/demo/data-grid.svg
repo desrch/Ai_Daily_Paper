@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#132941"/>
+  <g stroke="#8fb8e8" stroke-opacity=".22">
+    <path d="M80 80v380M200 80v380M320 80v380M440 80v380M560 80v380M680 80v380M800 80v380"/>
+    <path d="M80 100h800M80 190h800M80 280h800M80 370h800M80 460h800"/>
+  </g>
+  <path d="m80 400 130-64 102 20 148-164 126 44 144-120 150 34" fill="none" stroke="#f7f3ea" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#b91c1c">
+    <circle cx="210" cy="336" r="12"/>
+    <circle cx="460" cy="192" r="12"/>
+    <circle cx="730" cy="116" r="12"/>
+  </g>
+  <text x="80" y="66" fill="#f7f3ea" font-family="Georgia,serif" font-size="28" letter-spacing="6">SIGNAL / 08:00</text>
+</svg>

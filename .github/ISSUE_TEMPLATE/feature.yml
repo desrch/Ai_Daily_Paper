@@ -1,0 +1,56 @@
+name: 功能需求
+description: 提交一个可以独立开发和验收的功能任务
+title: "[Feature] "
+labels:
+  - P2
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 功能描述
+      description: 清晰描述要实现的功能及其边界。
+    validations:
+      required: true
+  - type: textarea
+    id: user-story
+    attributes:
+      label: 用户故事
+      description: 例如：作为一名用户，我希望……，以便……
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: 验收标准
+      description: 请使用可验证的清单描述完成条件。
+      placeholder: |
+        - [ ] 条件一
+        - [ ] 条件二
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      options:
+        - P0
+        - P1
+        - P2
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: 负责人
+      description: 填写 GitHub 用户名；尚未确定时填写“待分配”。
+      placeholder: "@username / 待分配"
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖任务
+      description: 填写相关 Issue 编号或“无”。
+      placeholder: "#123 / 无"
+    validations:
+      required: true

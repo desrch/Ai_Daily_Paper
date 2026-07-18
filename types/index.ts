@@ -1,5 +1,7 @@
-export type TimeRange = "24h" | "7d" | "30d";
 export type NewsAngle = "政策" | "技术" | "产业" | "应用" | "市场";
+export type NewsTimeRange = "24h" | "7d" | "30d";
+/** @deprecated 请优先使用 NewsTimeRange，保留此别名仅用于旧代码兼容。 */
+export type TimeRange = NewsTimeRange;
 export type PosterTemplate = "classic" | "modern";
 export type SummaryLength = "brief" | "standard";
 export type CreationType = "daily_issue" | "theme_poster" | "topic_poster";
@@ -107,18 +109,84 @@ export interface Creation {
   saved: boolean;
 }
 
-export interface DeliveryResult {
-  issue: DailyIssue;
-  emailSent: boolean;
-  status: "completed" | "partial";
+export type GenerationStage =
+  | "fetching"
+  | "ranking"
+  | "summarizing"
+  | "layout";
+
+export type AsyncState =
+  | "idle"
+  | "loading"
+  | "success"
+  | "partial_success"
+  | "error";
+
+export interface GenerationStatus {
+  state: AsyncState;
+  stage?: GenerationStage;
+  completedStages: GenerationStage[];
   message: string;
+}
+
+export interface ApiError {
+  code: string;
+  message: string;
+  retryable: boolean;
+}
+
+export interface SearchNewsParams {
+  keyword: string;
+  timeRange?: NewsTimeRange;
 }
 
 export interface SearchNewsResponse {
   query: string;
-  timeRange: TimeRange;
+  timeRange: NewsTimeRange;
   items: SearchNewsItem[];
   total: number;
+}
+
+export interface GenerateDailyIssueInput {
+  userId: string;
+  topics: string[];
+  issueDate?: string;
+}
+
+export interface GenerateThemePosterInput {
+  theme: string;
+  articleCount: 3 | 4 | 5;
+  summaryLength: SummaryLength;
+  template: PosterTemplate;
+}
+
+export interface GenerateTopicPosterInput {
+  keyword: string;
+  articleIds: string[];
+  template: PosterTemplate;
+}
+
+export interface SaveSubscriptionsInput {
+  subscriptions: {
+    id?: string;
+    topic: string;
+    keywords: string[];
+    enabled: boolean;
+  }[];
+  deliverySettings: DeliverySettings;
+}
+
+export interface SaveCreationInput {
+  href: string;
+}
+
+export interface CreationFilters {
+  type?: CreationType | "all";
+  keyword?: string;
+  dateFrom?: string;
+  dateTo?: string;
+  offset?: number;
+  limit?: number;
 }
 
 export interface CreationListResponse {
@@ -126,4 +194,30 @@ export interface CreationListResponse {
   total: number;
   offset: number;
   limit: number;
+}
+
+export interface SimulateDailyDeliveryInput {
+  userId: string;
+  issueDate?: string;
+}
+
+export interface DeliveryResult {
+  issue: DailyIssue;
+  emailSent: boolean;
+  status: "completed" | "partial";
+  message: string;
+}
+
+export interface DemoScenarios {
+  loading: GenerationStatus;
+  empty: {
+    title: string;
+    description: string;
+  };
+  error: ApiError;
+  partialSuccess: {
+    emailSent: false;
+    status: "partial";
+    message: string;
+  };
 }

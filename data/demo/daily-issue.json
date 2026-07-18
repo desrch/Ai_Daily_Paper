@@ -1,0 +1,103 @@
+{
+  "id": "demo-daily",
+  "userId": "demo-user",
+  "issueDate": "2026-07-18",
+  "newspaperName": "今日报纸",
+  "topics": ["人工智能", "科技数码", "商业财经"],
+  "leadArticleId": "demo-news-tech-01",
+  "dailyBriefing": "本期为固定演示日报。样例内容从技术、应用与市场三个方向展示 TodayPaper 的结构化排版能力，不代表实时新闻。",
+  "sections": [
+    {
+      "title": "AI 前沿",
+      "articles": [
+        {
+          "id": "demo-news-tech-01",
+          "title": "演示｜多模态学习助手原型展示新的课堂协作方式",
+          "description": "这是一条演示内容：原型强调教师可控、过程可解释与学习材料的结构化整理。",
+          "source": "TodayPaper 演示资料库",
+          "publishedAt": "2026-07-17T06:22:00.000Z",
+          "category": "人工智能",
+          "imageUrl": "/images/demo/ai-lab.svg",
+          "keywords": ["多模态", "学习助手", "技术"],
+          "relevanceScore": 93
+        },
+        {
+          "id": "demo-news-tech-02",
+          "title": "演示｜轻量模型让本地学习资料整理成为可能",
+          "description": "这是一条演示内容：技术样例讨论离线推理、低功耗设备和本地数据处理的潜在价值。",
+          "source": "TodayPaper 演示资料库",
+          "publishedAt": "2026-07-12T04:16:00.000Z",
+          "category": "科技数码",
+          "imageUrl": "/images/demo/ai-lab.svg",
+          "keywords": ["轻量模型", "本地推理", "隐私"],
+          "relevanceScore": 82
+        }
+      ]
+    },
+    {
+      "title": "科技观察",
+      "articles": [
+        {
+          "id": "demo-news-application-01",
+          "title": "演示｜校园试点用 AI 辅助整理课后反馈",
+          "description": "这是一条演示内容：试点只呈现模拟流程，重点关注教师复核、学生隐私和反馈时效。",
+          "source": "TodayPaper 演示资料库",
+          "publishedAt": "2026-07-15T08:40:00.000Z",
+          "category": "校园生活",
+          "imageUrl": "/images/demo/campus.svg",
+          "keywords": ["校园试点", "课后反馈", "应用"],
+          "relevanceScore": 89
+        },
+        {
+          "id": "demo-news-policy-02",
+          "title": "演示｜高校发布生成式 AI 教学使用原则样例",
+          "description": "这是一条演示内容：原则样例覆盖引用标注、作业诚信、教师责任和敏感数据处理。",
+          "source": "TodayPaper 演示资料库",
+          "publishedAt": "2026-07-13T09:52:00.000Z",
+          "category": "科技数码",
+          "imageUrl": "/images/demo/education.svg",
+          "keywords": ["高校", "生成式 AI", "使用原则"],
+          "relevanceScore": 84
+        }
+      ]
+    },
+    {
+      "title": "商业脉搏",
+      "articles": [
+        {
+          "id": "demo-news-industry-01",
+          "title": "演示｜教育科技团队把重心转向可验证的实际成效",
+          "description": "这是一条演示内容：行业观察样例显示，采购方更关注可评估结果、数据治理和长期服务能力。",
+          "source": "TodayPaper 演示资料库",
+          "publishedAt": "2026-07-16T03:05:00.000Z",
+          "category": "商业财经",
+          "imageUrl": "/images/demo/market.svg",
+          "keywords": ["教育科技", "行业", "成效评估"],
+          "relevanceScore": 91
+        },
+        {
+          "id": "demo-news-market-01",
+          "title": "演示｜市场观察关注教育 AI 的可持续服务模式",
+          "description": "这是一条演示内容：样例分析从成本、续费、内容质量和合规投入四个维度整理观察指标。",
+          "source": "TodayPaper 演示资料库",
+          "publishedAt": "2026-07-14T02:18:00.000Z",
+          "category": "商业财经",
+          "imageUrl": "/images/demo/data-grid.svg",
+          "keywords": ["市场观察", "商业模式", "人工智能教育"],
+          "relevanceScore": 86
+        }
+      ]
+    }
+  ],
+  "quickNews": [
+    "演示速览：智能教育讨论正在从功能展示转向质量与责任。",
+    "演示速览：本地推理被用于说明隐私友好的产品方向。",
+    "演示速览：行业样例更强调可以长期评估的实际成效。"
+  ],
+  "watchNext": [
+    "教师复核在智能教育产品中的具体流程",
+    "学习数据最小化收集与本地处理",
+    "教育科技服务的长期效果评估"
+  ],
+  "createdAt": "2026-07-18T00:00:00.000Z"
+}

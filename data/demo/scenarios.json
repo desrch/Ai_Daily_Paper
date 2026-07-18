@@ -1,0 +1,22 @@
+{
+  "loading": {
+    "state": "loading",
+    "stage": "ranking",
+    "completedStages": ["fetching"],
+    "message": "正在筛选并去除重复演示内容"
+  },
+  "empty": {
+    "title": "暂时没有匹配的演示内容",
+    "description": "请更换关键词或扩大时间范围后重试。"
+  },
+  "error": {
+    "code": "MOCK_SERVICE_UNAVAILABLE",
+    "message": "演示服务暂时不可用，请重试或继续使用固定数据。",
+    "retryable": true
+  },
+  "partialSuccess": {
+    "emailSent": false,
+    "status": "partial",
+    "message": "日报已保存，但演示邮件未发送。"
+  }
+}

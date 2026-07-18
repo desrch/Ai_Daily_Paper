@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#e8eee7"/>
+  <circle cx="730" cy="135" r="68" fill="#b91c1c" fill-opacity=".9"/>
+  <path d="M0 430 250 218l142 126 154-174 414 270v100H0z" fill="#183b34"/>
+  <path d="m95 445 228-191 79 70 151-169 302 204" fill="none" stroke="#fffdf8" stroke-width="9"/>
+  <g fill="#fffdf8">
+    <circle cx="295" cy="394" r="26"/>
+    <circle cx="392" cy="420" r="22"/>
+    <circle cx="498" cy="376" r="24"/>
+  </g>
+  <text x="48" y="74" fill="#171717" font-family="Georgia,serif" font-size="28" letter-spacing="6">CAMPUS / FIELD NOTE</text>
+</svg>
