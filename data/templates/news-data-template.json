@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "news-batch-2026-07-18-ai-001",
+  "provider": {
+    "name": "crawler-member-name",
+    "sourceType": "rss | news_api | website | manual | demo",
+    "sourceName": "Example News Source",
+    "sourceHomepage": "https://example.com"
+  },
+  "crawl": {
+    "keyword": "人工智能",
+    "category": "人工智能",
+    "timeRange": "24h",
+    "crawledAt": "2026-07-18T08:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "totalFetched": 1,
+    "notes": "用于统一不同成员抓取结果的模板。提交真实数据时可删除本说明文字。"
+  },
+  "articles": [
+    {
+      "id": "example-source-20260718-001",
+      "title": "示例新闻标题：某公司发布新一代 AI 助手",
+      "description": "这里填写新闻的简短摘要或原始 description。若源站没有摘要，可从正文前 100 到 200 字截取。",
+      "content": "这里填写可选正文内容。若没有正文抓取能力，可置为空字符串或删除该字段。",
+      "source": "示例媒体",
+      "sourceUrl": "https://example.com/news/example-article",
+      "publishedAt": "2026-07-18T07:30:00+08:00",
+      "category": "人工智能",
+      "imageUrl": "https://example.com/images/example.jpg",
+      "keywords": [
+        "人工智能",
+        "AI 助手",
+        "科技"
+      ],
+      "raw": {
+        "originalId": "optional-original-id",
+        "originalTitle": "源站原始标题，可选",
+        "author": "可选作者",
+        "language": "zh-CN"
+      }
+    }
+  ],
+  "_schema": {
+    "requiredTopLevelFields": [
+      "schemaVersion",
+      "batchId",
+      "provider",
+      "crawl",
+      "articles"
+    ],
+    "requiredArticleFields": [
+      "id",
+      "title",
+      "description",
+      "source",
+      "publishedAt",
+      "category",
+      "keywords"
+    ],
+    "optionalArticleFields": [
+      "content",
+      "sourceUrl",
+      "imageUrl",
+      "raw"
+    ],
+    "fieldRules": {
+      "id": "同一篇新闻必须稳定不变。优先使用来源 ID；否则使用 source + sourceUrl/title + publishedAt 生成。",
+      "title": "保留原始新闻含义，只做去空格和去乱码处理。",
+      "description": "优先使用源站摘要；没有摘要时从正文截取；不要编造事实。",
+      "content": "可选。保存正文或正文片段，供摘要和去重使用。",
+      "source": "必须是真实来源名称。缺失时填写 Unknown，不要伪造媒体名。",
+      "sourceUrl": "原文链接。缺失时可删除该字段或置为空字符串。",
+      "publishedAt": "ISO 8601 时间字符串，建议带时区，例如 2026-07-18T07:30:00+08:00。",
+      "category": "建议使用产品预设方向，如 人工智能、科技数码、商业财经、体育赛事、电影娱乐、校园生活、区块链、大学生就业。",
+      "imageUrl": "可选。新闻主图链接，缺失时后端会使用默认占位图。",
+      "keywords": "关键词数组，至少包含本次抓取关键词或分类词。",
+      "raw": "可选。保留爬虫侧原始字段，便于排查，但前端不会直接依赖。"
+    },
+    "allowedTimeRangeValues": [
+      "24h",
+      "7d",
+      "30d",
+      "custom"
+    ],
+    "allowedSourceTypeValues": [
+      "rss",
+      "news_api",
+      "website",
+      "manual",
+      "demo"
+    ]
+  }
+}
