@@ -2,6 +2,7 @@ import { apiError, json, readJsonBody } from "@/lib/api/http";
 import { enhanceTopicPosterWithAi } from "@/lib/ai/generate";
 import { savePosterToDb, upsertCreationToDb } from "@/lib/db/creations";
 import { generateTopicPoster, topicPosterCreation } from "@/lib/demo/generate";
+import { isExternalNewsEnabled, findArticlesByIdsExternal } from "@/lib/news/external-source";
 import { findArticlesByIds, pickArticles } from "@/lib/news/source";
 import type { PosterTemplate } from "@/types";
 
@@ -35,7 +36,9 @@ export async function POST(request: Request) {
     return apiError(400, "INVALID_TEMPLATE", "海报模板只支持 classic 或 modern。", false);
   }
 
-  const matched = findArticlesByIds(articleIds);
+  let matched = isExternalNewsEnabled()
+    ? await findArticlesByIdsExternal(keyword, articleIds)
+    : findArticlesByIds(articleIds);
   const articles = matched.length === articleIds.length ? matched : pickArticles(keyword, articleIds.length, "7d");
 
   const fallbackPoster = generateTopicPoster(keyword, articleIds, articles, template);

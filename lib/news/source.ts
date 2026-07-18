@@ -140,7 +140,7 @@ function filterByTimeRange(articles: NewsArticle[], timeRange: TimeRange) {
   return filtered.length >= 6 ? filtered : articles;
 }
 
-function scoreArticle(article: NewsArticle, keyword: string) {
+export function scoreArticle(article: NewsArticle, keyword: string) {
   const tokens = tokenize(keyword);
   const title = article.title.toLowerCase();
   const description = article.description.toLowerCase();
@@ -192,7 +192,7 @@ function completenessScore(article: NewsArticle) {
   return score;
 }
 
-function dedupeArticles<T extends NewsArticle>(articles: T[]) {
+export function dedupeArticles<T extends NewsArticle>(articles: T[]) {
   const result: T[] = [];
   const seenUrls = new Set<string>();
 
@@ -207,7 +207,7 @@ function dedupeArticles<T extends NewsArticle>(articles: T[]) {
   return result;
 }
 
-function diversifyAngles(articles: SearchNewsItem[], limit: number) {
+export function diversifyAngles(articles: SearchNewsItem[], limit: number) {
   const selected: SearchNewsItem[] = [];
   for (const angle of ANGLES) {
     const candidate = articles.find(
@@ -225,7 +225,7 @@ function diversifyAngles(articles: SearchNewsItem[], limit: number) {
   return selected;
 }
 
-function inferAngle(article: NewsArticle): SearchNewsItem["angle"] {
+export function inferAngle(article: NewsArticle): SearchNewsItem["angle"] {
   const text = `${article.title} ${article.description} ${article.keywords.join(" ")}`;
   if (/政策|监管|治理|标准|规则|安全|责任|政府|工信部|联合国/.test(text)) return "政策";
   if (/模型|芯片|算法|语料|系统|技术|研究|数据|算力|开源/.test(text)) return "技术";

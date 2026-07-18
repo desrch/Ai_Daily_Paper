@@ -1,4 +1,5 @@
 import { apiError, json, normalizeString } from "@/lib/api/http";
+import { isExternalNewsEnabled, searchNewsExternal } from "@/lib/news/external-source";
 import { searchNews } from "@/lib/news/source";
 import type { SearchNewsResponse, TimeRange } from "@/types";
 
@@ -18,7 +19,9 @@ export async function GET(request: Request) {
   }
 
   const timeRange = rawTimeRange as TimeRange;
-  const items = searchNews(keyword, timeRange);
+  const items = isExternalNewsEnabled()
+    ? await searchNewsExternal(keyword, timeRange)
+    : searchNews(keyword, timeRange);
   const response: SearchNewsResponse = {
     query: keyword,
     timeRange,

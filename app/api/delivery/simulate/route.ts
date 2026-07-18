@@ -6,6 +6,7 @@ import { getSubscriptionBundleFromDb } from "@/lib/db/subscriptions";
 import { dailyIssueCreation } from "@/lib/demo/generate";
 import { generateDailyIssue } from "@/lib/demo/generate";
 import { DEFAULT_USER_ID, getDefaultSubscriptionBundle } from "@/lib/demo/store";
+import { renderDailyIssueEmail, renderDailyIssueText, sendEmail } from "@/lib/email/resend";
 import type { DeliveryResult } from "@/types";
 
 interface SimulateDeliveryRequest {
@@ -51,12 +52,30 @@ export async function POST(request: Request) {
     }
   }
 
-  const emailSent = Boolean(bundle.deliverySettings.dailyDelivery && bundle.deliverySettings.email);
+  const shouldEmail = Boolean(bundle.deliverySettings.dailyDelivery && bundle.deliverySettings.email);
+  let emailSent = false;
+  let emailError: string | undefined;
+
+  if (shouldEmail) {
+    const result = await sendEmail({
+      to: bundle.deliverySettings.email,
+      subject: `${issue.newspaperName} · ${issue.issueDate}`,
+      html: renderDailyIssueEmail(issue),
+      text: renderDailyIssueText(issue),
+    });
+    emailSent = result.success;
+    emailError = result.error;
+  }
+
   const result: DeliveryResult = {
     issue,
     emailSent,
     status: emailSent ? "completed" : "partial",
-    message: emailSent ? "日报已生成并模拟发送邮件。" : "日报已生成，但邮件暂未发送。"
+    message: emailSent
+      ? "日报已生成并发送邮件。"
+      : emailError
+        ? `日报已生成，但邮件发送失败：${emailError}`
+        : "日报已生成，但邮件暂未发送。",
   };
 
   try {
