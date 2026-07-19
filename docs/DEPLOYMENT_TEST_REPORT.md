@@ -19,7 +19,7 @@
 
 - **Vercel 项目**：`prpypos-projects/todaypaper`
 - **生产地址**：https://todaypaper.vercel.app
-- **本次部署地址**：https://todaypaper-2b41xdgw4-prpypos-projects.vercel.app
+- **本次部署地址**：https://todaypaper-3h5m0y01e-prpypos-projects.vercel.app
 - **部署状态**：✅ READY
 - **Git 自动部署**：❌ 未连接（CLI 连接 GitHub 仓库失败，需在 Vercel Dashboard 手动授权）
 
@@ -35,13 +35,13 @@
 | `DEEPSEEK_BASE_URL` | ✅ | `https://api.deepseek.com` |
 | `DEEPSEEK_MODEL` | ✅ | `deepseek-v4-flash` |
 | `AI_ENABLED` | ✅ | `true`，启用 AI 增强 |
-| `NEWS_PROVIDER_MODE` | ✅ | `local`（可改为 `newsapi` 接入真实新闻源） |
+| `NEWS_PROVIDER_MODE` | ✅ | `newsapi`（当前环境无法直连 NewsAPI，已自动回退到本地演示数据） |
 | `NEXT_PUBLIC_USE_MOCK_API` | ✅ | `false`，使用真实 API |
 | `NEXT_PUBLIC_APP_URL` | ✅ | `https://todaypaper.vercel.app` |
 | `DEMO_USER_ID` | ✅ | `demo-user` |
-| `RESEND_API_KEY` | ⚠️ | 未配置，邮件功能不可用 |
-| `EMAIL_FROM` | ⚠️ | 未配置 |
-| `NEWS_API_KEY` | ⚠️ | 未配置，新闻搜索使用本地演示数据 |
+| `RESEND_API_KEY` | ✅ | 已配置 |
+| `EMAIL_FROM` | ✅ | `TodayPaper <onboarding@resend.dev>` |
+| `NEWS_API_KEY` | ✅ | 已配置 |
 
 本地 `.env.local` 已按你提供的配置写入根目录，**未提交到 Git**。
 
@@ -103,8 +103,9 @@
 | `GET /api/theme-posters/:id` | ✅ 200 | 读取成功 |
 | `POST /api/topic-poster/generate` | ✅ 200 | 生成专题海报成功 |
 | `GET /api/topic-posters/:id` | ✅ 200 | 读取成功 |
-| `POST /api/delivery/simulate` | ✅ 200 | 日报生成成功；邮件状态取决于 Resend 配置 |
-| `POST /api/email/send` | ✅ 已新增 | 需配置 Resend 后才能真实发送 |
+| `POST /api/delivery/simulate` | ✅ 200 | `emailSent: true`，日报邮件真实发送成功 |
+| `POST /api/email/send` | ✅ 200 | 测试发送成功，返回 messageId |
+| `GET /api/news/search` | ✅ 200 | 当前环境无法直连 NewsAPI，已自动回退到本地演示数据 |
 
 ### 3.2 自动化测试
 
@@ -115,7 +116,20 @@ npm run build     # ✅ 通过
 npm run check:frontend # ✅ 通过（4 个 warning，0 个 error）
 ```
 
-### 3.3 已修复的 Bug
+### 3.3 外部服务说明
+
+#### Resend 邮件
+- **配置状态**：✅ 已配置 API Key 和发件邮箱
+- **本地测试**：`POST /api/email/send` 成功发送测试邮件，返回 messageId
+- **日报投递**：`POST /api/delivery/simulate` 成功发送日报邮件
+- **发件邮箱**：`onboarding@resend.dev`（Resend 测试域名；若要使用自定义域名，需在 Resend 验证域名后替换）
+
+#### NewsAPI 新闻源
+- **配置状态**：✅ 已配置 API Key，`NEWS_PROVIDER_MODE=newsapi`
+- **本地测试**：当前运行环境无法直接连接 `newsapi.org:443`（连接超时），因此自动回退到本地演示数据
+- **预期效果**：在 Vercel 服务器或你的本地网络能访问 NewsAPI 时，`GET /api/news/search` 会自动调用真实新闻源
+
+### 3.4 已修复的 Bug
 
 #### Bug 1：演示数据角度被覆盖
 - **现象**：`DemoNewsProvider` 提供的候选新闻角度被 `classifyAngle` 重新分类，导致部分文章角度错误。
@@ -134,23 +148,16 @@ npm run check:frontend # ✅ 通过（4 个 warning，0 个 error）
 
 ## 4. 仍存在的问题 / 下一步建议
 
-### 4.1 邮件发送需配置 Resend
+### 4.1 发件邮箱可替换为自定义域名
 
-- **现状**：`RESEND_API_KEY` 和 `EMAIL_FROM` 未配置，邮件功能不可用。
-- **配置后效果**：`POST /api/delivery/simulate` 会真实发送日报邮件。
-- **需要你提供**：
-  - Resend API Key
-  - 已验证的发件邮箱（例如 `TodayPaper <onboarding@resend.dev>` 或你自己的域名邮箱）
+- **现状**：使用 `onboarding@resend.dev` 发送邮件
+- **建议**：若需使用 `todaypaper@yourdomain.com` 等品牌邮箱，在 Resend 验证域名后，将 Vercel 的 `EMAIL_FROM` 改为对应地址
 
-### 4.2 真实新闻源需配置 NEWS_API_KEY
+### 4.2 NewsAPI 访问受限（当前运行环境）
 
-- **现状**：`NEWS_PROVIDER_MODE=local`，新闻搜索和专题使用本地/演示数据。
-- **配置后效果**：
-  - `GET /api/news/search` 调用外部新闻 API
-  - `POST /api/topic-poster/generate` 从外部源匹配文章
-- **需要你提供**：
-  - NewsAPI.org 或其他兼容 `/v2/everything` 接口的 API Key
-  - 在 Vercel 中设置 `NEWS_PROVIDER_MODE=newsapi` 和 `NEWS_API_KEY=你的密钥`
+- **现状**：本机无法直接连接 `newsapi.org:443`，已自动回退到本地演示数据
+- **验证方式**：部署到 Vercel 后，在浏览器访问 `https://todaypaper.vercel.app/topic-search` 搜索关键词，观察是否返回真实新闻
+- **备选方案**：如果 NewsAPI 在你的网络或 Vercel 区域仍不可用，可切换回本地模式：将 `NEWS_PROVIDER_MODE` 改回 `local`
 
 ### 4.3 GitHub 自动部署未连接
 
@@ -199,7 +206,8 @@ npm test
 - ✅ 所有页面和核心 API 通过冒烟测试
 - ✅ 全部 86 个单元测试通过
 - ✅ Vercel 生产环境已部署并配置真实环境变量
-- ✅ Resend 邮件发送代码已接入（待配置密钥）
-- ✅ 真实新闻 API 接入代码已完成（待配置密钥）
-- ⚠️ Resend API Key 和 NEWS_API_KEY 需要你提供
+- ✅ Resend 邮件发送已配置并测试成功（`emailSent: true`）
+- ✅ NewsAPI 已配置，`NEWS_PROVIDER_MODE=newsapi`，外部源失败时自动回退到本地数据
+- ⚠️ 本机无法直连 NewsAPI，Vercel 线上环境应可正常访问
 - ⚠️ GitHub 自动部署需你在 Vercel Dashboard 手动授权连接
+- ⚠️ 发件邮箱目前为 `onboarding@resend.dev`，可后续替换为自定义域名
