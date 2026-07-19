@@ -20,7 +20,7 @@ export async function searchNewsExternal(
 ): Promise<SearchNewsItem[]> {
   const apiKey = process.env.NEWS_API_KEY;
   if (!apiKey) {
-    throw new Error("NEWS_API_KEY 未配置");
+    return [];
   }
 
   const provider = new GenericNewsApiProvider({ apiKey });
@@ -29,27 +29,37 @@ export async function searchNewsExternal(
   const from = new Date(now - days * 24 * 60 * 60 * 1000).toISOString();
   const to = new Date(now).toISOString();
 
-  const articles = await provider.search({ query: keyword, from, to, limit: limit * 2 });
+  try {
+    const articles = await provider.search({ query: keyword, from, to, limit: limit * 2 });
 
-  const ranked = articles
-    .map((article) => ({
-      ...article,
-      relevanceScore: scoreArticle(article, keyword),
-      angle: inferAngle(article),
-    }))
-    .filter((article) => article.relevanceScore > 18)
-    .sort((a, b) => b.relevanceScore - a.relevanceScore);
+    const ranked = articles
+      .map((article) => ({
+        ...article,
+        relevanceScore: scoreArticle(article, keyword),
+        angle: inferAngle(article),
+      }))
+      .filter((article) => article.relevanceScore > 18)
+      .sort((a, b) => b.relevanceScore - a.relevanceScore);
 
-  return diversifyAngles(dedupeArticles(ranked), limit);
+    return diversifyAngles(dedupeArticles(ranked), limit);
+  } catch (error) {
+    // 外部新闻源失败时不阻塞主流程，返回空数组让调用方回退到本地数据。
+    console.error("[external-source] search failed:", error instanceof Error ? error.message : String(error));
+    return [];
+  }
 }
 
 export async function findArticlesByIdsExternal(
   keyword: string,
   articleIds: string[],
 ): Promise<NewsArticle[]> {
-  const all = await searchNewsExternal(keyword, "7d", Math.max(articleIds.length * 2, 12));
-  const byId = new Map(all.map((article) => [article.id, article]));
-  return articleIds
-    .map((id) => byId.get(id))
-    .filter((article): article is NonNullable<typeof article> => Boolean(article));
+  try {
+    const all = await searchNewsExternal(keyword, "7d", Math.max(articleIds.length * 2, 12));
+    const byId = new Map(all.map((article) => [article.id, article]));
+    return articleIds
+      .map((id) => byId.get(id))
+      .filter((article): article is NonNullable<typeof article> => Boolean(article));
+  } catch {
+    return [];
+  }
 }

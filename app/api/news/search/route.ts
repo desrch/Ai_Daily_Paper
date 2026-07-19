@@ -19,9 +19,10 @@ export async function GET(request: Request) {
   }
 
   const timeRange = rawTimeRange as TimeRange;
-  const items = isExternalNewsEnabled()
+  const externalItems = isExternalNewsEnabled()
     ? await searchNewsExternal(keyword, timeRange)
-    : searchNews(keyword, timeRange);
+    : [];
+  const items = externalItems.length > 0 ? externalItems : searchNews(keyword, timeRange);
   const response: SearchNewsResponse = {
     query: keyword,
     timeRange,
